@@ -13,7 +13,7 @@ Chrome扩展备份助手 - 备份、导入和批量安装Chrome扩展程序
 
 ## 支持的云存储
 
-- 坚果云 (Jianguoyun)
+- 任何支持WebDAV协议的云存储服务（如坚果云、Nextcloud、OwnCloud等）
 
 ## 安装使用
 
@@ -24,13 +24,13 @@ Chrome扩展备份助手 - 备份、导入和批量安装Chrome扩展程序
 3. 点击"加载已解压的扩展程序"
 4. 选择本项目文件夹
 
-### 2. 配置WebDAV（坚果云）
+### 2. 配置WebDAV
 
 1. 打开扩展弹出窗口
 2. 在WebDAV配置中填写：
-   - 服务器地址：`https://dav.jianguoyun.com/dav/`
-   - 用户名：坚果云注册邮箱
-   - 密码：应用密码（需在坚果云官网生成）
+   - 服务器地址：您的WebDAV服务器地址（如坚果云为 `https://dav.jianguoyun.com/dav/`）
+   - 用户名：WebDAV账户用户名
+   - 密码：WebDAV账户密码
 3. 点击"保存并测试连接"
 
 ### 3. 使用指南

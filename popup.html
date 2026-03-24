@@ -35,7 +35,7 @@
       <div id="webdav-setup" class="webdav-setup">
         <div class="webdav-setup-title">📌 配置WebDAV连接</div>
         <div class="webdav-desc">
-          支持坚果云、Nextcloud等WebDAV服务
+          支持坚果云、Nextcloud、OwnCloud等WebDAV协议云存储
         </div>
         <div class="webdav-form">
           <div class="webdav-input-group">
@@ -44,20 +44,20 @@
           </div>
           <div class="webdav-input-group">
             <label>用户名</label>
-            <input type="text" id="webdav-username" class="webdav-input" placeholder="坚果云邮箱">
+            <input type="text" id="webdav-username" class="webdav-input" placeholder="WebDAV账户用户名">
           </div>
           <div class="webdav-input-group">
             <label>密码</label>
-            <input type="password" id="webdav-password" class="webdav-input" placeholder="应用密码">
+            <input type="password" id="webdav-password" class="webdav-input" placeholder="WebDAV账户密码">
           </div>
           <button id="btn-save-webdav" class="btn btn-primary">保存并测试连接</button>
         </div>
         <div class="webdav-hint">
-          <p><strong>坚果云配置：</strong></p>
+          <p><strong>配置说明：</strong></p>
           <ol>
-            <li>登录坚果云 → 在根目录创建文件夹 <code>extbackup</code></li>
-            <li>设置 → 安全 → 添加应用，获取应用密码</li>
-            <li>服务器地址填写根目录: <code>https://dav.jianguoyun.com/dav/</code></li>
+            <li>在您的WebDAV服务器根目录创建文件夹 <code>extbackup</code></li>
+            <li>获取WebDAV账户的用户名和密码</li>
+            <li>服务器地址填写WebDAV根目录地址</li>
             <li>程序会自动添加 <code>/extbackup</code> 路径</li>
           </ol>
         </div>
