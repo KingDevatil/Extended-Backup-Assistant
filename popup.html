@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>扩展备份助手</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>扩展备份助手</h1>
+      <p class="subtitle">备份、导入和批量安装Chrome扩展</p>
+    </header>
+
+    <div class="actions">
+      <button id="btn-get-extensions" class="btn btn-primary">
+        <span class="btn-icon">📋</span>
+        获取已安装扩展
+      </button>
+      <button id="btn-export" class="btn btn-secondary" disabled>
+        <span class="btn-icon">💾</span>
+        导出列表
+      </button>
+      <button id="btn-import" class="btn btn-secondary">
+        <span class="btn-icon">📂</span>
+        导入列表
+      </button>
+      <input type="file" id="file-import" accept=".json" style="display: none;">
+    </div>
+
+    <div class="cloud-section">
+      <h2>WebDAV 云端备份</h2>
+      
+      <div id="webdav-setup" class="webdav-setup">
+        <div class="webdav-setup-title">📌 配置WebDAV连接</div>
+        <div class="webdav-desc">
+          支持坚果云、Nextcloud等WebDAV服务
+        </div>
+        <div class="webdav-form">
+          <div class="webdav-input-group">
+            <label>服务器地址</label>
+            <input type="text" id="webdav-server" class="webdav-input" placeholder="https://dav.jianguoyun.com/dav/">
+          </div>
+          <div class="webdav-input-group">
+            <label>用户名</label>
+            <input type="text" id="webdav-username" class="webdav-input" placeholder="坚果云邮箱">
+          </div>
+          <div class="webdav-input-group">
+            <label>密码</label>
+            <input type="password" id="webdav-password" class="webdav-input" placeholder="应用密码">
+          </div>
+          <button id="btn-save-webdav" class="btn btn-primary">保存并测试连接</button>
+        </div>
+        <div class="webdav-hint">
+          <p><strong>坚果云配置：</strong></p>
+          <ol>
+            <li>登录坚果云 → 在根目录创建文件夹 <code>extbackup</code></li>
+            <li>设置 → 安全 → 添加应用，获取应用密码</li>
+            <li>服务器地址填写根目录: <code>https://dav.jianguoyun.com/dav/</code></li>
+            <li>程序会自动添加 <code>/extbackup</code> 路径</li>
+          </ol>
+        </div>
+      </div>
+
+      <div id="webdav-connected" class="webdav-connected" style="display: none;">
+        <div class="webdav-status-row">
+          <span id="webdav-status" class="webdav-status">✅ 已连接到WebDAV</span>
+          <div>
+            <button id="btn-webdav-edit" class="btn btn-text">修改配置</button>
+            <button id="btn-webdav-reset" class="btn btn-text btn-danger">清除配置</button>
+          </div>
+        </div>
+        <div class="cloud-actions">
+          <button id="btn-webdav-backup" class="btn btn-cloud" disabled>
+            <span class="btn-icon">☁️</span>
+            备份到云端
+          </button>
+          <button id="btn-webdav-restore" class="btn btn-cloud" disabled>
+            <span class="btn-icon">🔄</span>
+            恢复最新备份
+          </button>
+        </div>
+      </div>
+      
+      <div id="webdav-backup-list" class="webdav-backup-list" style="display: none;">
+        <h3>云端备份列表</h3>
+        <div id="backup-files" class="backup-files"></div>
+      </div>
+    </div>
+
+    <div class="extensions-section">
+      <div class="section-header">
+        <h2>扩展列表 <span id="extension-count">(0)</span></h2>
+        <button id="btn-select-all" class="btn btn-text" disabled>全选</button>
+      </div>
+
+      <div id="extension-list" class="extension-list">
+        <div class="empty-state">
+          <p>点击"获取已安装扩展"或"导入列表"开始</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="install-section">
+      <button id="btn-install-selected" class="btn btn-install" disabled>
+        <span class="btn-icon">⬇️</span>
+        安装选中扩展 (<span id="selected-count">0</span>)
+      </button>
+    </div>
+
+    <div id="message" class="message"></div>
+  </div>
+
+  <script src="webdav.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
