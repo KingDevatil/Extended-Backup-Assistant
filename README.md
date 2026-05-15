@@ -78,7 +78,6 @@ extended-backup-assistant/
 
 - `management` - 获取已安装扩展信息
 - `storage` - 本地存储配置
-- `tabs` - 打开扩展商店页面
 - `https://dav.jianguoyun.com/*` - 坚果云WebDAV访问
 
 ## 注意事项

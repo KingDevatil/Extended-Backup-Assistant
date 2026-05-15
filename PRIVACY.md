@@ -50,7 +50,6 @@ Extended Backup Assistant（以下简称"本扩展"）非常重视用户隐私�
 |------|------|
 | management | 获取已安装扩展的基本信息（名称、版本、ID） |
 | storage | 存储您的WebDAV配置 |
-| tabs | 打开Chrome应用商店页面以便安装扩展 |
 | <your-webdav-server> | 与您的WebDAV服务器通信 |
 
 ## 8. 第三方服务
