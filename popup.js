@@ -399,7 +399,7 @@
     for (let i = 0; i < selected.length; i++) {
       const ext = selected[i];
       try {
-        await chrome.tabs.create({ url: ext.webStoreUrl, active: false });
+        await chrome.windows.create({ url: ext.webStoreUrl, focused: false });
       } catch (error) {
         console.error('打开标签页失败:', error);
       }

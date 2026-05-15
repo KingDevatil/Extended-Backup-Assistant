@@ -5,8 +5,7 @@
   "description": "Chrome扩展备份助手 - 备份、导入和批量安装Chrome扩展程序",
   "permissions": [
     "management",
-    "storage",
-    "tabs"
+    "storage"
   ],
   "host_permissions": [
     "https://chrome.google.com/webstore/*",
